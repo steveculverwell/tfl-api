@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <style>
+      div{margin-bottom: 20px;}
+    </style>
+ </head>
+  <body>
+
+      <div class="container">
+
+      </div>
+
+
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+
+        $.ajax({
+          url: 'http://api.tfl.gov.uk/Line/%7Bids%7D/Arrivals?stopPointId=940GZZLUHOH&ids=metropolitan&app_id=##########&app_key=##########',
+          type: 'GET',
+          dataType: 'json',
+          success: function (data) { 
+            $.each(data, function( key, value ) {
+
+              var minutes = Math.floor(parseInt(value.timeToStation) / 60);
+
+                console.log('The vehicle ' + value.vehicleId + ', travelling to ' + value.towards + ' is at ' + value.stationName + ' on ' + value.platformName + '. It will arrive at it\'s next station in ' + minutes + ' minutes.');
+            })
+          },
+          error: function() { alert('boo!'); },
+          // beforeSend: setHeader
+        });
+      });
+
+
+    </script>
+  </body>
+</html>
