@@ -1,0 +1,90 @@
+body {
+  font-family: arial;
+  background: #f8f9fb;
+}
+
+html, body, ul, ol, li, form, fieldset, legend {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin-top: 0;
+}
+
+fieldset, img {
+  border: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.derp {
+  max-width: 400px;
+}
+
+.line {
+  font-family: verdana;
+  font-weight: 100;
+  color: white;
+  padding: 8px;
+  margin-bottom: 5px;
+  border-radius: 2px;
+}
+
+.bakerloo {
+  background-color: #894e24;
+}
+
+.central {
+  background-color: #DC241F;
+}
+
+.circle {
+  background-color: #FFCE00;
+}
+
+.district {
+  background-color: #007229;
+}
+
+.hammersmith-city {
+  background-color: #D799AF;
+}
+
+.jubilee {
+  background-color: #6A7278;
+}
+
+.metropolitan {
+  background-color: #751056;
+}
+
+.northern {
+  background-color: #000000;
+}
+
+.piccadilly {
+  background-color: #0019A8;
+}
+
+.victoria {
+  background-color: #00A0E2;
+}
+
+.waterloo-city {
+  background-color: #76D0BD;
+}
+
+.line.circle, .line.hammersmith-city {
+  color: black;
+}

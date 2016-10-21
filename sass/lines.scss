@@ -1,0 +1,13 @@
+@mixin lines{
+  .bakerloo{background-color: $bakerloo;}
+  .central{background-color: $central;}
+  .circle{background-color: $circle;}
+  .district{background-color: $district;}
+  .hammersmith-city{background-color: $hammersmith-city;}
+  .jubilee{background-color: $jubilee;}
+  .metropolitan{background-color: $metropolitan;}
+  .northern{background-color: $northern;}
+  .piccadilly{background-color: $piccadilly;}
+  .victoria{background-color: $victoria;}
+  .waterloo-city{background-color: $waterloo-city;}
+}

@@ -1,66 +1,38 @@
 <html>
   <head>
     <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
-
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <style>
-      div{margin-bottom: 20px;}
-    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
+    <link href="css/master.css" type="text/css" rel="stylesheet"/>
  </head>
   <body>
-      
-      <div class="derp">
-        <table>
-        <script id="template" type="text/x-handlebars-template">
-          {{#each this}}
-            <tr>
-            <td>The {{name}} has {{lineStatuses.0.statusSeverityDescription}}.</td>  
-            <td>{{#if lineStatuses.0.reason}}
-                {{lineStatuses.0.reason}}
-              {{/if}}
-            </td>
-            </tr>
-          {{/each}}
-        </script>        
-          <!--  -->
-        </table>
 
+      <div class="derp">
+        <script id="template" type="text/x-handlebars-template">
+          <ul>
+            {{#each this}}
+              <li class="line {{id}}">The {{name}} has a {{lineStatuses.0.statusSeverityDescription}}.</li>
+            {{/each}}
+          </ul>
+
+        </script>
       </div>
 
-
+      <!-- https://api.tfl.gov.uk/Line/Mode/tube/Status?detail=False&app_id=&app_key=
+      https://api.tfl.gov.uk/Line/metropolitan,jubilee/Status?detail=False&app_id=beb81da8&app_key=068027e99d6e41a6d394d23e7b68b871 -->
 
 
     <script type="text/javascript">
       $(document).ready(function() {
       // http://api.tfl.gov.uk/#Line
-
       $.ajax({
-          url: 'https://api.tfl.gov.uk/Line/metropolitan,jubilee/Status?detail=False&app_id=beb81da8&app_key=068027e99d6e41a6d394d23e7b68b871',
+          url: 'https://api.tfl.gov.uk/Line/Mode/tube/Status?detail=False&app_id=beb81da8&app_key=068027e99d6e41a6d394d23e7b68b871',
           type: 'GET',
           dataType: 'json',
       }).done(function(response) {
-          
-          console.log(response);
-
           var template = Handlebars.compile($('#template').html());
-
-          console.log(template);
-
           $('.derp').append(template(response));
-
-
       }).fail(function() {
-
       })
-
-
-
       });
 
 

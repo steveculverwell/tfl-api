@@ -1,6 +1,9 @@
 <html>
   <head>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
+
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <!-- Optional theme -->
@@ -23,7 +26,7 @@
       $(document).ready(function() {
       // http://api.tfl.gov.uk/#Line
         $.ajax({
-          url: 'http://api.tfl.gov.uk/Line/%7Bids%7D/Arrivals?stopPointId=940GZZLUHOH&ids=metropolitan&app_id=##########&app_key=##########',
+          url: 'https://api.tfl.gov.uk/Line/metropolitan/Arrivals?app_id=beb81da8&app_key=068027e99d6e41a6d394d23e7b68b871',
           type: 'GET',
           dataType: 'json',
           success: function (data) { 
