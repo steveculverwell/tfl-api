@@ -1,2 +1,11 @@
-# tfl-api
-tfl api - 
+# TFL API
+
+Using the TFL API to get information on line status' and journey information.
+
+## Getting Started
+* [TFL API set up](https://api-portal.tfl.gov.uk/login)
+* [Line API found here](https://api.tfl.gov.uk/#Line)
+* [Postman Chrome API dev tool](https://www.getpostman.com/)
+* [Handlebars JS Tempate tool](http://handlebarsjs.com/)
+
+
