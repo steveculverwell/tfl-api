@@ -23,4 +23,6 @@ Using the TFL API to get information on line status' and journey information.
       });
 ```
 
-
+* /StopPoint/{id}/Arrivals
+* chesham 940GZZLUCSM
+* https://api.tfl.gov.uk/StopPoint/940GZZLUCSM/Arrivals?app_id=yyy&app_key=XXX
